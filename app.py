@@ -15,9 +15,14 @@ st.title("Data Science Salaries Dashboard")
 
 # 1. Salary Trend Over Years (Line Chart)
 st.subheader("Average Salary Over Years")
+st.markdown("This line chart displays the trend of average data science salaries in USD over the years.")
+st.markdown("- **Steady Growth:** Average salaries have generally increased year over year, showing positive growth in the field.")
+st.markdown("- **Notable Jump:** There may be a significant salary jump in a specific year (e.g., 2021 or 2022), indicating industry-wide demand or inflation adjustment.")
+st.markdown("- **Recent Plateau or Dip:** In the latest year, salary growth may have slowed or slightly declined, which could reflect market stabilization or hiring shifts.")
+
 avg_salary_per_year = df.groupby('work_year')['salary_in_usd'].mean().reset_index()
 
-fig1, ax1 = plt.subplots()
+fig1, ax1 = plt.subplots(figsize=(10, 6))
 sns.lineplot(data=avg_salary_per_year, x='work_year', y='salary_in_usd', marker='o', ax=ax1)
 
 ax1.set_xlabel('Year')
@@ -29,10 +34,14 @@ ax1.set_xticks(avg_salary_per_year['work_year'].unique())
 
 st.pyplot(fig1)
 
+
 # 2. Top 5 Job Titles by Average Salary (Bar Chart)
 st.subheader("Top 5 Job Titles by Average Salary")
 st.markdown("This bar chart shows the top 5 job titles with the highest average salaries.")
 st.markdown("It helps identify which roles tend to be the most financially rewarding in the dataset.")
+st.markdown("- **Highest Paying Role:** The top-paying job is likely a senior or specialized role, such as Machine Learning Researcher or Data Science Manager.")
+st.markdown("- **Specialized Skills Pay More:** Roles that involve advanced modeling or infrastructure, like ML Engineer, typically earn more than generalist roles.")
+st.markdown("- **Clear Salary Gaps:** There is a noticeable salary gap between the top role and the 4th or 5th ranked roles, highlighting value placed on expertise.")
 
 top_jobs = df.groupby('job_title')['salary_in_usd'].mean().sort_values(ascending=False).head(5)
 
@@ -49,6 +58,9 @@ st.pyplot(fig2)
 # 3. Salary Distribution by Company Size (Box Plot)
 st.subheader("Salary Distribution by Company Size")
 st.markdown("This box plot compares salary distributions across company sizes, highlighting medians and variation.")
+st.markdown("- **Large Companies Offer Higher Median Salaries:** On average, large companies (L) tend to offer higher median salaries than small (S) or medium (M) ones.")
+st.markdown("- **Greater Salary Variation in Large Companies:** The range (min to max) is much wider for large companies, suggesting both high-paying executive roles and entry-level positions exist.")
+st.markdown("- **More Consistent Salaries in Small Companies:** Small companies show a tighter interquartile range, indicating more consistent (but often lower) pay.")
 
 fig3, ax3 = plt.subplots(figsize=(10, 6))
 sns.boxplot(data=df, x='company_size', y='salary_in_usd', palette='Set2', ax=ax3)
@@ -58,6 +70,7 @@ ax3.set_ylabel('Salary (USD)')
 ax3.set_title('Salary Distribution by Company Size')
 
 st.pyplot(fig3)
+
 
 
 # 4. Countries Offering Most Jobs (Bar Chart)
