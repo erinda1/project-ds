@@ -16,11 +16,17 @@ st.title("Data Science Salaries Dashboard")
 # 1. Salary Trend Over Years (Line Chart)
 st.subheader("Average Salary Over Years")
 avg_salary_per_year = df.groupby('work_year')['salary_in_usd'].mean().reset_index()
+
 fig1, ax1 = plt.subplots()
 sns.lineplot(data=avg_salary_per_year, x='work_year', y='salary_in_usd', marker='o', ax=ax1)
+
 ax1.set_xlabel('Year')
 ax1.set_ylabel('Average Salary (USD)')
 ax1.set_title('Average Salary Over Years')
+
+# Ensure each year label appears only once
+ax1.set_xticks(avg_salary_per_year['work_year'].unique())
+
 st.pyplot(fig1)
 
 # 2. Top 5 Job Titles by Average Salary (Bar Chart)
