@@ -73,29 +73,15 @@ st.pyplot(fig3)
 
 
 
-import pycountry
-
-# Function to convert country code to full country name
-def get_country_name(country_code):
-    try:
-        return pycountry.countries.get(alpha_2=country_code).name
-    except AttributeError:
-        return country_code  # In case there's no match
-
-# 4. Countries Offering Most Jobs (Bar Chart)
+ # 4. Countries Offering Most Jobs (Bar Chart)
 st.subheader("Top 10 Countries Offering Most Jobs")
 st.markdown("This bar chart shows the top 10 countries offering the most data science jobs.")
 st.markdown("- The United States leads by a significant margin in job offerings.")
 st.markdown("- European countries like Germany and the UK are also strong contributors.")
 st.markdown("- The distribution suggests that opportunities are concentrated in a few key countries.")
 
-# Map the company_location (country code) to the full country name
-df['country_name'] = df['company_location'].apply(get_country_name)
+jobs_by_country = df['company_location'].value_counts().head(10)
 
-# Get the top 10 countries by job count
-jobs_by_country = df['country_name'].value_counts().head(10)
-
-# Plot the updated chart with full country names
 fig4, ax4 = plt.subplots(figsize=(10, 6))
 sns.barplot(x=jobs_by_country.values, y=jobs_by_country.index, palette='mako', ax=ax4)
 
