@@ -112,3 +112,22 @@ ax5.set_title('Most Popular Data Science Job Titles in the US')
 
 st.pyplot(fig5)
 
+# 6. Experience Level Breakdown (Pie Chart)
+st.subheader("Experience Level Breakdown")
+st.markdown("This pie chart shows the distribution of experience levels among data science professionals.")
+st.markdown("- **Entry-level (EN):** Represents those just starting their careers.")
+st.markdown("- **Mid-level (MI):** Typically professionals with a few years of experience.")
+st.markdown("- **Senior-level (SE):** Experienced practitioners with leadership or specialized roles.")
+st.markdown("- **Executive-level (EX):** Top-level positions such as Heads of Data or CTOs.")
+
+# Count each experience level
+experience_counts = df['experience_level'].value_counts()
+
+# Create the pie chart
+fig6, ax6 = plt.subplots(figsize=(8, 8))
+ax6.pie(experience_counts.values, labels=experience_counts.index, autopct='%1.1f%%', startangle=90, colors=sns.color_palette("pastel"))
+ax6.set_title("Experience Level Distribution")
+ax6.axis('equal')  # Equal aspect ratio ensures the pie chart is circular
+
+st.pyplot(fig6)
+
