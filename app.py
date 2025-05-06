@@ -15,6 +15,8 @@ st.title("Data Science Salaries Dashboard")
 
 # 1. Salary Trend Over Years (Line Chart)
 st.subheader("Average Salary Over Years")
+st.markdown("**Takeaway:** Salaries have generally increased year over year, reflecting the rising demand for data professionals. This helps job seekers understand earning trends and time their entry into the job market more wisely.")
+
 st.markdown("This line chart displays the trend of average data science salaries in USD over the years.")
 st.markdown("- **Steady Growth:** Average salaries have generally increased year over year, showing positive growth in the field.")
 st.markdown("- **Notable Jump:** There may be a significant salary jump in a specific year (e.g., 2021 or 2022), indicating industry-wide demand or inflation adjustment.")
@@ -37,6 +39,8 @@ st.pyplot(fig1)
 
 # 2. Top 5 Job Titles by Average Salary (Bar Chart)
 st.subheader("Top 5 Job Titles by Average Salary")
+st.markdown("**Takeaway:** Specialized roles like ML Engineers and Data Science Managers earn the most, showing that advanced skills and experience are rewarded. Job seekers can use this to guide their career focus or skill-building path.")
+
 st.markdown("This bar chart shows the top 5 job titles with the highest average salaries.")
 st.markdown("It helps identify which roles tend to be the most financially rewarding in the dataset.")
 st.markdown("- **Highest Paying Role:** The top-paying job is likely a senior or specialized role, such as Machine Learning Researcher or Data Science Manager.")
@@ -57,6 +61,8 @@ st.pyplot(fig2)
 
 # 3. Salary Distribution by Company Size (Box Plot)
 st.subheader("Salary Distribution by Company Size")
+st.markdown("**Takeaway:** Large companies tend to pay higher, but with wider variation. Smaller companies offer more consistent (but lower) pay. This helps job seekers choose the right environment based on income expectations and risk tolerance.")
+
 st.markdown("This box plot compares salary distributions across company sizes, highlighting medians and variation.")
 st.markdown("- **Large Companies Offer Higher Median Salaries:** On average, large companies (L) tend to offer higher median salaries than small (S) or medium (M) ones.")
 st.markdown("- **Greater Salary Variation in Large Companies:** The range (min to max) is much wider for large companies, suggesting both high-paying executive roles and entry-level positions exist.")
@@ -75,6 +81,8 @@ st.pyplot(fig3)
 
  # 4. Countries Offering Most Jobs (Bar Chart)
 st.subheader("Top 10 Countries Offering Most Jobs")
+st.markdown("**Takeaway:** The US leads in job offerings, followed by key European countries. This helps job seekers target regions with more opportunities, and helps governments understand where talent pipelines are needed.")
+
 st.markdown("This bar chart shows the top 10 countries offering the most data science jobs.")
 st.markdown("- The United States leads by a significant margin in job offerings.")
 st.markdown("- European countries like Germany and the UK are also strong contributors.")
@@ -95,6 +103,8 @@ st.pyplot(fig4)
 
 # 5. Most Popular Job Titles in the US (Bar Chart)
 st.subheader("Most Popular Job Titles in the US")
+st.markdown("**Takeaway:** Data Scientist remains the most in-demand title, followed by Data Engineer and ML Engineer. Job seekers can align their training with the most marketable roles in the US job market.")
+
 st.markdown("This bar chart highlights the most common data science-related job titles in the US.")
 st.markdown("- Data Scientist is the most frequently listed job title.")
 st.markdown("- Roles like Data Engineer and Machine Learning Engineer also appear prominently.")
@@ -114,6 +124,8 @@ st.pyplot(fig5)
 
 # 6. Experience Level Breakdown (Pie Chart)
 st.subheader("Experience Level Breakdown")
+st.markdown("**Takeaway:** Mid- and senior-level professionals make up the largest share, but there's room for entry-level talent too. This helps newcomers understand they’re entering a competitive but accessible market.")
+
 st.markdown("This pie chart shows the distribution of experience levels among data science professionals.")
 st.markdown("- **Entry-level (EN):** Represents those just starting their careers.")
 st.markdown("- **Mid-level (MI):** Typically professionals with a few years of experience.")
