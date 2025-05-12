@@ -15,13 +15,13 @@ st.title("Data Science Salaries Dashboard")
 
 # 1. Salary Trend Over Years (Line Chart)
 st.subheader("Average Salary Over Years")
-st.markdown("- **Recent Plateau or Dip:** In the latest year, salary growth may have slowed or slightly declined, which could reflect market stabilization or hiring shifts.")
+
 st.markdown("**Takeaway:** Salaries have generally increased year over year, reflecting the rising demand for data professionals. This helps job seekers understand earning trends and time their entry into the job market more wisely.")
 
 st.markdown("This line chart displays the trend of average data science salaries in USD over the years.")
 st.markdown("- **Steady Growth:** Average salaries have generally increased year over year, showing positive growth in the field.")
 st.markdown("- **Notable Jump:** There may be a significant salary jump in a specific year (e.g., 2021 or 2022), indicating industry-wide demand or inflation adjustment.")
-st.markdown("- **Recent Plateau or Dip:** In the latest year, salary growth may have slowed or slightly declined, which could reflect market stabilization or hiring shifts.")
+st.markdown("- In the latest year, salary growth may have slowed or slightly declined, which could reflect market stabilization or hiring shifts.")
 
 avg_salary_per_year = df.groupby('work_year')['salary_in_usd'].mean().reset_index()
 
@@ -46,7 +46,7 @@ st.markdown("This bar chart shows the top 5 job titles with the highest average 
 st.markdown("It helps identify which roles tend to be the most financially rewarding in the dataset.")
 st.markdown("- **Highest Paying Role:** The top-paying job is likely a senior or specialized role, such as Machine Learning Researcher or Data Science Manager.")
 st.markdown("- **Specialized Skills Pay More:** Roles that involve advanced modeling or infrastructure, like ML Engineer, typically earn more than generalist roles.")
-st.markdown("- **Clear Salary Gaps:** There is a noticeable salary gap between the top role and the 4th or 5th ranked roles, highlighting value placed on expertise.")
+
 
 top_jobs = df.groupby('job_title')['salary_in_usd'].mean().sort_values(ascending=False).head(5)
 
